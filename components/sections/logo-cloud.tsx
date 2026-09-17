@@ -66,7 +66,7 @@ export function LogoCloud() {
   return (
     <section className="border-b border-[var(--color-border)] py-12">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-[var(--color-foreground-muted)] opacity-50">
+        <p className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-[#a8a8a8]">
           Tools I work with
         </p>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">

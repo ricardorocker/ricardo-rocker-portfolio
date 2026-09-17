@@ -241,9 +241,9 @@ export function Hero() {
             className="mt-20 grid grid-cols-2 gap-8 border-t border-[var(--color-border)] pt-8 md:grid-cols-4"
           >
             {[
-              { value: "10+", label: "Years", sub: "building for US/EU" },
+              { value: "6+", label: "Years", sub: "building for US/EU" },
               { value: "30+", label: "Contracts", sub: "shipped" },
-              { value: "$250K+", label: "Lifetime", sub: "billed (Upwork)" },
+              { value: "$150K+", label: "Lifetime", sub: "billed (Upwork)" },
               { value: "24h", label: "Reply time", sub: "on weekday messages" },
             ].map((stat) => (
               <div key={stat.label}>

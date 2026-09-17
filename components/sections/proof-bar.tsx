@@ -46,7 +46,7 @@ export function ProofBar() {
           {doubled.map((tag, i) => (
             <span
               key={i}
-              className="shrink-0 text-xs font-medium uppercase tracking-widest text-[var(--color-foreground-muted)] opacity-50"
+              className="shrink-0 text-xs font-medium uppercase tracking-widest text-[#a8a8a8]"
               style={{ fontFamily: "var(--font-geist-mono)" }}
             >
               {tag}
