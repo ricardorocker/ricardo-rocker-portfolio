@@ -9,16 +9,16 @@ export const ricardo = {
   tagline: "Next.js sites, n8n automations, Python scripts. Remote, async.",
 
   stats: {
-    years: "10+",
+    years: "6+",
     contracts: "30+",
-    lifetimeBilled: "$250K+",
+    lifetimeBilled: "$150K+",
     replyTime: "24h",
     upworkRating: "4.9",
     lighthouseMobile: "95+",
   },
 
   bio: {
-    short: "Senior front-end engineer and automation specialist. 10+ years building landing pages, dashboards, workflows, and AI tools for clients in fintech, e-commerce, and B2B SaaS. Remote contracts via Upwork.",
+    short: "Senior front-end engineer and automation specialist. 6+ years building landing pages, dashboards, workflows, and AI tools for clients in the US and Europe. Remote contracts via Upwork.",
     long: `I'm a full-stack engineer based in Brazil, working remotely with clients
 across the US and Europe. I build two types of things:
 
@@ -89,10 +89,10 @@ Currently open to remote contracts via Upwork.`,
   trustLogos: ["stripe", "openai", "vercel", "notion", "linear", "figma", "github", "supabase"],
   // REGRA STEPHANIE NINA: Never cite employers by name. Use generics.
   experience: [
-    { period: "2024–present", role: "Senior Front-End Consultant", context: "Fintech & SaaS clients (US/EU)" },
-    { period: "2021–2024", role: "Senior Front-End Engineer", context: "Enterprise consulting (NDA clients)" },
-    { period: "2018–2021", role: "Front-End Engineer", context: "Brazilian SaaS companies (B2B dashboards)" },
-    { period: "2014–2018", role: "Junior Front-End Developer", context: "Agency work (e-commerce, lead-gen)" },
+    { period: "2025–present", role: "Senior Front-End Engineer", context: "Fintech enterprise (React + TypeScript, micro-frontends)" },
+    { period: "2024–2025", role: "Senior Front-End Engineer", context: "Enterprise consulting — financial sector (Angular 18)" },
+    { period: "2024", role: "Front-End Engineer", context: "Banking sector (Angular, NDA client)" },
+    { period: "2020–2024", role: "Front-End Engineer", context: "Brazilian SaaS companies (B2B dashboards, lead-gen)" },
   ],
   stack: [
     { name: "React", years: 8, level: "expert" },
@@ -116,14 +116,27 @@ Currently open to remote contracts via Upwork.`,
     "Workflow Automation (Zapier / n8n / APIs)",
     "AI Integration (OpenAI API)",
   ],
-  // TODO: Replace with your real profile URLs
+  // Real profile URLs
   links: {
-    upwork: process.env.NEXT_PUBLIC_UPWORK_URL ?? "https://upwork.com/freelancers/~YOUR_UPWORK_USERNAME",
-    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "https://linkedin.com/in/YOUR_LINKEDIN_USERNAME",
-    github: process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/YOUR_GITHUB_USERNAME",
+    upwork: process.env.NEXT_PUBLIC_UPWORK_URL ?? "https://www.upwork.com/freelancers/ricardorocker",
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "https://www.linkedin.com/in/ricardo-s-rocker/",
+    github: process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/ricardorocker",
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@ricardorocker.com",
   },
   rateNote: "Rate on request. I work hourly or fixed-price — your choice.",
+
+  // Media assets
+  media: {
+    profilePhoto: "/profile/photo.png",
+    introVideo: {
+      youtubeId: "QqaSh2sOyo4",
+      // Embed URL with sensible defaults (modest branding, no related videos)
+      embedUrl: "https://www.youtube-nocookie.com/embed/QqaSh2sOyo4?rel=0&modestbranding=1",
+      // Thumbnail served by YouTube (maxresdefault is 1280x720; YouTube serves hqdefault as fallback if missing)
+      thumbnailUrl: "https://i.ytimg.com/vi/QqaSh2sOyo4/maxresdefault.jpg",
+      title: "2-minute intro — Ricardo Rocker",
+    },
+  },
 
   showcaseProjects: [
     // Front-end (6 existing)
