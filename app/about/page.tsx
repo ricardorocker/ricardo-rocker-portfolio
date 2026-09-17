@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ricardo } from "@/lib/ricardo";
 import { ArrowLeft, MapPin, Calendar } from "lucide-react";
+import { LiteYouTube } from "@/components/shared/lite-youtube";
 
 export const metadata: Metadata = {
   title: `About — ${ricardo.name}`,
@@ -21,36 +22,81 @@ export default function AboutPage() {
           Back
         </Link>
 
-        {/* Header */}
-        <div className="mb-16">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
-            About me
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-            {ricardo.name}
-          </h1>
-          <p className="mt-2 text-lg text-[var(--color-foreground-muted)]">
-            {ricardo.role}
-          </p>
+        {/* Header: photo + identity side by side */}
+        <header className="mb-16 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+          <img
+            src={ricardo.media.profilePhoto}
+            alt={`Portrait of ${ricardo.name}`}
+            width={144}
+            height={144}
+            loading="eager"
+            decoding="async"
+            className="h-36 w-36 shrink-0 rounded-full border-2 border-[var(--color-accent)]/40 object-cover shadow-[var(--shadow-accent-lg)]"
+          />
 
-          <div className="mt-4 flex flex-wrap gap-4 text-sm text-[var(--color-foreground-muted)]">
-            <span className="flex items-center gap-1.5">
-              <MapPin size={14} />
-              Brazil (UTC-3)
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Calendar size={14} />
-              10+ years experience
-            </span>
+          <div className="flex-1">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+              About me
+            </p>
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
+              {ricardo.name}
+            </h1>
+            <p className="mt-2 text-lg text-[var(--color-foreground-muted)]">
+              {ricardo.role}
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-4 text-sm text-[var(--color-foreground-muted)]">
+              <span className="flex items-center gap-1.5">
+                <MapPin size={14} />
+                Brazil (UTC-3)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} />
+                6+ years experience
+              </span>
+            </div>
           </div>
-        </div>
+        </header>
 
         {/* Bio */}
         <div className="mb-16 space-y-6 leading-relaxed text-[var(--color-foreground-muted)]">
           {ricardo.bio.long.split("\n\n").map((paragraph, i) => (
-            <p key={i}>{paragraph.trim()}</p>
+            <p key={i}>
+              {paragraph
+                .trim()
+                .split(/(\*\*[^*]+\*\*)/g)
+                .map((chunk, j) =>
+                  chunk.startsWith("**") && chunk.endsWith("**") ? (
+                    <strong key={j} className="text-[var(--color-foreground)] font-semibold">
+                      {chunk.slice(2, -2)}
+                    </strong>
+                  ) : (
+                    <span key={j}>{chunk}</span>
+                  )
+                )}
+            </p>
           ))}
         </div>
+
+        {/* Video intro */}
+        <section className="mb-16">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+              Watch instead
+            </span>
+            <span className="h-px flex-1 bg-[var(--color-border)]" />
+          </div>
+          <LiteYouTube
+            videoId={ricardo.media.introVideo.youtubeId}
+            title={ricardo.media.introVideo.title}
+            thumbnailUrl={ricardo.media.introVideo.thumbnailUrl}
+            embedUrl={ricardo.media.introVideo.embedUrl}
+          />
+          <p className="mt-4 text-sm text-[var(--color-foreground-muted)]">
+            2 minutes. Who I work with, how I work, and what it feels like to ship
+            together. If you prefer reading, the bio above covers the same ground.
+          </p>
+        </section>
 
         {/* Experience timeline */}
         <div className="mb-16">
